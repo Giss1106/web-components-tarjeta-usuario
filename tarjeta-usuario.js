@@ -2,7 +2,6 @@ class TarjetaUsuario extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: 'open' });
-  
       this.shadowRoot.innerHTML = `
         <style>
           .card {
@@ -53,15 +52,10 @@ class TarjetaUsuario extends HTMLElement {
     }
   
     static get observedAttributes() {
-      return ['tema'];
-    }
-  
+      return ['tema']; }
     attributeChangedCallback(name, oldValue, newValue) {
       if (name === 'tema') {
         this.shadowRoot.querySelector('.card').style.background = newValue;
-      }
-    }
-  }
-  
+      }} }
   customElements.define('tarjeta-usuario', TarjetaUsuario);
   
